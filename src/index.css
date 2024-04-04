@@ -207,6 +207,7 @@ Cart
 	background: var(--clr-red-light);
 	color: var(--clr-red-dark);
 	border-color: var(--clr-red-light);
+	color: #f1f5f8;
 }
 .confirm-btn {
 	border-color: var(--clr-primary);
