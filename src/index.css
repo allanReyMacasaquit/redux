@@ -5,7 +5,7 @@ Variables
 */
 
 :root {
-	--clr-primary: #645cff;
+	--clr-primary: #000040;
 	--clr-primary-dark: #282566;
 	--clr-primary-light: #a29dff;
 	--clr-grey-1: #102a42;
@@ -212,6 +212,9 @@ Cart
 .confirm-btn {
 	border-color: var(--clr-primary);
 	color: var(--clr-primary);
+}
+.confirm-btn:hover {
+	color: white;
 }
 /*
 =============== 
