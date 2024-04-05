@@ -1,6 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { Minus, Plus } from './assets';
-import { removeItem } from '../redux/toolkit/slice/cartSlice';
+import {
+	decreaseItem,
+	increaseItem,
+	removeItem,
+} from '../redux/toolkit/slice/cartSlice';
 
 const CartItem = ({ id, img, title, price, amount }) => {
 	const dispatch = useDispatch();
@@ -20,11 +24,21 @@ const CartItem = ({ id, img, title, price, amount }) => {
 				</button>
 			</div>
 			<div style={{ display: 'flex' }}>
-				<button className='amount-btn'>
+				<button
+					className='amount-btn'
+					onClick={() => {
+						dispatch(decreaseItem(id));
+					}}
+				>
 					<Minus />
 				</button>
 				<p className='amount'>{amount}</p>
-				<button className='amount-btn'>
+				<button
+					className='amount-btn'
+					onClick={() => {
+						dispatch(increaseItem(id));
+					}}
+				>
 					<Plus />
 				</button>
 			</div>
