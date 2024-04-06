@@ -3,9 +3,23 @@ import CartItem from './CartItem';
 import { openModal } from '../redux/toolkit/slice/modalSlice';
 const CartContainer = () => {
 	const dispatch = useDispatch();
-	const { cartItems, totalPrice, itemCount } = useSelector(
+	const { cartItems, totalPrice, itemCount, error } = useSelector(
 		(state) => state.cart
 	);
+
+	if (error) {
+		return (
+			<section className='cart' style={{ textAlign: 'center' }}>
+				<h2>your bag</h2>
+				<header>
+					<h2 style={{ color: 'red' }}>Something went Wrong</h2>
+					<span style={{ fontSize: '2rem' }}>
+						Your request has been {error}
+					</span>
+				</header>
+			</section>
+		);
+	}
 
 	if (itemCount < 1) {
 		return (
